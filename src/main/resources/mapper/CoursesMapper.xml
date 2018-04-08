@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letgym.gymcourse.dao.CoursesMapper">
+  <resultMap id="BaseResultMap" type="com.letgym.gymcourse.model.Courses">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="courseID" jdbcType="INTEGER" property="courseid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="subName" jdbcType="VARCHAR" property="subname" />
+    <result column="recommendScore" jdbcType="INTEGER" property="recommendscore" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="isDelete" jdbcType="BIT" property="isdelete" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+  </resultMap>
+</mapper>

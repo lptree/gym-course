@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letgym.gymcourse.dao.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.letgym.gymcourse.model.UserInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="gender" jdbcType="BIT" property="gender" />
+    <result column="birthDate" jdbcType="TIMESTAMP" property="birthdate" />
+    <result column="qqCode" jdbcType="VARCHAR" property="qqcode" />
+    <result column="wechatCode" jdbcType="VARCHAR" property="wechatcode" />
+    <result column="memberStartTime" jdbcType="TIMESTAMP" property="memberstarttime" />
+    <result column="memberEndTime" jdbcType="TIMESTAMP" property="memberendtime" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="lastLoginTime" jdbcType="TIMESTAMP" property="lastlogintime" />
+    <result column="headImageUrl" jdbcType="VARCHAR" property="headimageurl" />
+    <result column="isDelete" jdbcType="BIT" property="isdelete" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+  </resultMap>
+</mapper>
