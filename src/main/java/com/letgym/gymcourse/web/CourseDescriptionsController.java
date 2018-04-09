@@ -8,6 +8,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -28,9 +29,9 @@ public class CourseDescriptionsController {
     private CourseDescriptionsService courseDescriptionsService;
 
     @ApiOperation(value = "增加课程", notes = " ")
-    @ApiImplicitParam(name = "courseDescriptions", value = "课程信息实体", paramType = "query", required = true, dataType = "CourseDescriptions")
+    @ApiImplicitParam(name = "courseDescriptions", value = "课程信息实体", paramType = "body", required = true, dataType = "CourseDescriptions")
     @PostMapping("/add")
-    public Result add(CourseDescriptions courseDescriptions) {
+    public Result add(@RequestBody CourseDescriptions courseDescriptions) {
         courseDescriptionsService.save(courseDescriptions);
         return ResultGenerator.genSuccessResult();
     }

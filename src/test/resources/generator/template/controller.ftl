@@ -8,6 +8,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -23,7 +24,7 @@ public class ${modelNameUpperCamel}Controller {
     private ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
 
     @PostMapping("/add")
-    public Result add(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
         return ResultGenerator.genSuccessResult();
     }

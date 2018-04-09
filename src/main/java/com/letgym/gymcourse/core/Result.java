@@ -1,10 +1,13 @@
 package com.letgym.gymcourse.core;
 
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * 统一API响应结果封装
  */
+@ApiModel(description= "返回响应数据")
 public class Result {
     private int code;
     private String message;
