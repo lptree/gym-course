@@ -16,6 +16,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class Swagger2 {
+
+
     //swagger2的配置文件，这里可以配置swagger2的一些基本的内容，比如扫描的包等等
     @Bean
     public Docket createRestApi() {
@@ -23,7 +25,7 @@ public class Swagger2 {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.springboot.example.Controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.letgym.gymcourse.web"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -31,9 +33,9 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("Spring Boot 测试使用 Swagger2 构建RESTful API")
+                .title("Spring Boot Gym Course使用 Swagger2 构建RESTful API")
                 //创建人
-                .contact(new Contact("MarryFeng", "http://www.baidu.com", ""))
+                .contact(new Contact("lptree", "http://www.baidu.com", ""))
                 //版本号
                 .version("1.0")
                 //描述
