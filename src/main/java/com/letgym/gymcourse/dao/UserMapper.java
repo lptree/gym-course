@@ -11,6 +11,6 @@ public interface UserMapper extends Mapper<User> {
 
     @Select("select t1.uid,t1.mobile,t1.type,t1.registerTime,t2.* from user t1 \n" +
             "left join user_info t2 on t1.uid = t2.uid\n" +
-            "where isdelete = 0 and t1.uid = #{uid}")
+            "where t1.isdelete = 0 and t1.uid = #{uid}")
     UserDetailInfo getUserDetailInfo(Integer uid);
 }
