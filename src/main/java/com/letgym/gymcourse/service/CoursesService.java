@@ -8,4 +8,5 @@ import com.letgym.gymcourse.core.Service;
  */
 public interface CoursesService extends Service<Courses> {
 
+
 }

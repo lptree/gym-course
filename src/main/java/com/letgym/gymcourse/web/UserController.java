@@ -2,6 +2,7 @@ package com.letgym.gymcourse.web;
 import com.letgym.gymcourse.core.Result;
 import com.letgym.gymcourse.core.ResultGenerator;
 import com.letgym.gymcourse.model.User;
+import com.letgym.gymcourse.model.custom.UserDetailInfo;
 import com.letgym.gymcourse.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -52,5 +53,11 @@ public class UserController {
         List<User> list = userService.findAll();
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
+    }
+
+    @PostMapping("/userDetail")
+    public Result userDetail(@RequestParam Integer id) {
+        UserDetailInfo user = userService.getUserDetailInfo(id);
+        return ResultGenerator.genSuccessResult(user);
     }
 }

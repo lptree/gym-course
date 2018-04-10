@@ -72,4 +72,11 @@ public class CourseDescriptionsController {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+    @PostMapping("/getCourseDescriptionsListByCourseId")
+    public Result getCourseDescriptionsListByCourseId(@RequestParam Integer courserId) {
+        List<CourseDescriptions> list = courseDescriptionsService.getCourseDescriptionsListByCourseId(courserId);
+        return ResultGenerator.genSuccessResult(list);
+    }
+
 }

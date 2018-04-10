@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-
+import java.util.*;
 
 /**
  * Created by CodeGenerator on 2018/04/02.
@@ -19,4 +19,13 @@ public class CourseDescriptionsServiceImpl extends AbstractService<CourseDescrip
     @Resource
     private CourseDescriptionsMapper courseDescriptionsMapper;
 
+    @Override
+    public List<CourseDescriptions> getCourseDescriptionsListByCourseId(int courseid)
+    {
+        List<CourseDescriptions> result= courseDescriptionsMapper.getCourseDescriptionsListByCourseId(courseid);
+
+        if(result==null) result= new ArrayList<>();
+
+        return result;
+    }
 }
