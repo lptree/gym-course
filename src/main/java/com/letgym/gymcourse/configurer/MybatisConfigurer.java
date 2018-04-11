@@ -21,8 +21,9 @@ import static com.letgym.gymcourse.core.ProjectConstant.*;
 
 /**
  * Mybatis & Mapper & PageHelper 配置
+ * 这个配置是单库配置
  */
-@Configuration
+//@Configuration
 public class MybatisConfigurer {
 
     @Bean
