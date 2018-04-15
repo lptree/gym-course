@@ -153,12 +153,18 @@
             <!--<charset>GBK</charset>-->
         </encoder>
     </appender>
+    <appender name="MyMongoDB" class="com.letgym.gymcourse.core.logging.MongoAppender">
+        <DbHost>127.0.0.1</DbHost>
+        <DbPort>27017</DbPort>
+        <DbName>logs</DbName>
+    </appender>
 
-    <logger name="com.letgym.gymcourse.service" level="DEBUG" additivity="false">
+    <logger name="com.letgym.gymcourse.service" level="INFO" additivity="false">
         <appender-ref ref="FILEERROR"/>
         <appender-ref ref="FILEWARN"/>
         <appender-ref ref="FILEINFO"/>
         <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="MyMongoDB"/>
     </logger>
 
     <!--<logger name="org.springframework.data.mybatis" level="DEBUG"/>-->
