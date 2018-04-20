@@ -5,11 +5,7 @@ import com.letgym.gymcourse.model.CourseDescriptions;
 import com.letgym.gymcourse.service.CourseDescriptionsService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -30,7 +26,8 @@ public class CourseDescriptionsController {
 
     @ApiOperation(value = "增加课程", notes = " ")
     @ApiImplicitParam(name = "courseDescriptions", value = "课程信息实体", paramType = "body", required = true, dataType = "CourseDescriptions")
-    @PostMapping("/add")
+    //@PostMapping("/add")
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
     public Result add(@RequestBody CourseDescriptions courseDescriptions) {
         courseDescriptionsService.save(courseDescriptions);
         return ResultGenerator.genSuccessResult();
