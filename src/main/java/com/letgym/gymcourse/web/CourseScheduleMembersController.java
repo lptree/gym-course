@@ -42,7 +42,7 @@ public class CourseScheduleMembersController {
     }
 
     @PostMapping("/detail")
-    public Result detail(@RequestParam Integer id) {
+    public Result detail(@RequestParam Long id) {
         CourseScheduleMembers courseScheduleMembers = courseScheduleMembersService.findById(id);
         return ResultGenerator.genSuccessResult(courseScheduleMembers);
     }

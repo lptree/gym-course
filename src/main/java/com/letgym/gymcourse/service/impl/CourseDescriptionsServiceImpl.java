@@ -31,7 +31,7 @@ public class CourseDescriptionsServiceImpl extends AbstractService<CourseDescrip
     {
         //logger.info("开始getCourseDescriptionsListByCourseId...");
         logger.info("{title:'getCourseDescriptionsListByCourseId',message:'开始getCourseDescriptionsListByCourseId...'}");
-
+        
         //TestUtils.HelloJars();
 
         List<CourseDescriptions> result = null;

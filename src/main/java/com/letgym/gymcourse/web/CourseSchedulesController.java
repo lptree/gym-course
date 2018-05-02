@@ -41,7 +41,7 @@ public class CourseSchedulesController {
     }
 
     @PostMapping("/detail")
-    public Result detail(@RequestParam Integer id) {
+    public Result detail(@RequestParam Long id) {
         CourseSchedules courseSchedules = courseSchedulesService.findById(id);
         return ResultGenerator.genSuccessResult(courseSchedules);
     }

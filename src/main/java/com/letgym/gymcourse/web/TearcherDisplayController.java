@@ -41,7 +41,7 @@ public class TearcherDisplayController {
     }
 
     @PostMapping("/detail")
-    public Result detail(@RequestParam Integer id) {
+    public Result detail(@RequestParam Long id) {
         TearcherDisplay tearcherDisplay = tearcherDisplayService.findById(id);
         return ResultGenerator.genSuccessResult(tearcherDisplay);
     }

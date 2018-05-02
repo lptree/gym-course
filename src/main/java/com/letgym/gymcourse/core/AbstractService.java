@@ -44,7 +44,7 @@ public abstract class AbstractService<T> implements Service<T> {
         mapper.updateByPrimaryKeySelective(model);
     }
 
-    public T findById(Integer id) {
+    public T findById(Long id) {
         return mapper.selectByPrimaryKey(id);
     }
 

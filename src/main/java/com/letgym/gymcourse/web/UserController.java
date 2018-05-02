@@ -2,7 +2,9 @@ package com.letgym.gymcourse.web;
 import com.letgym.gymcourse.core.Result;
 import com.letgym.gymcourse.core.ResultGenerator;
 import com.letgym.gymcourse.model.User;
+import com.letgym.gymcourse.model.custom.UserDTO;
 import com.letgym.gymcourse.model.custom.UserDetailInfo;
+import com.letgym.gymcourse.model.mapper.User2UserDTOMapper;
 import com.letgym.gymcourse.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -42,16 +44,32 @@ public class UserController {
     }
 
     @PostMapping("/detail")
-    public Result detail(@RequestParam Integer id) {
-        User user = userService.findById(id);
-        return ResultGenerator.genSuccessResult(user);
+    public Result detail(@RequestParam Long id) {
+        User user = null;
+        try {
+            user = userService.findById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        }
+
+        //转换为UserDTO
+        UserDTO userDTO = User2UserDTOMapper.MAPPER.User2UserDTO(user);
+
+
+        return ResultGenerator.genSuccessResult(userDTO);
     }
 
     @PostMapping("/list")
     public Result list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<User> list = userService.findAll();
-        PageInfo pageInfo = new PageInfo(list);
+
+        //转换为UserDTO
+        List<UserDTO> listDTO = User2UserDTOMapper.MAPPER.User2UserDTOs(list);
+
+
+        PageInfo pageInfo = new PageInfo(listDTO);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
 

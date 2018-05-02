@@ -52,7 +52,7 @@ public class CourseDescriptionsController {
     @ApiOperation(value = "课程详情", notes = "")
     @ApiImplicitParam(name = "id", value = "课程ID", paramType = "query", required = true, dataType = "Integer")
     @PostMapping("/detail")
-    public Result detail(@RequestParam Integer id) {
+    public Result detail(@RequestParam Long id) {
         CourseDescriptions courseDescriptions = courseDescriptionsService.findById(id);
         return ResultGenerator.genSuccessResult(courseDescriptions);
     }

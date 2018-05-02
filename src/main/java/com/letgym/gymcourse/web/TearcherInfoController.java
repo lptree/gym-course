@@ -41,7 +41,7 @@ public class TearcherInfoController {
     }
 
     @PostMapping("/detail")
-    public Result detail(@RequestParam Integer id) {
+    public Result detail(@RequestParam Long id) {
         TearcherInfo tearcherInfo = tearcherInfoService.findById(id);
         return ResultGenerator.genSuccessResult(tearcherInfo);
     }

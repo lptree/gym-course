@@ -3,9 +3,35 @@ package com.letgym.gymcourse.model.custom;
 import java.util.Date;
 
 /*
-* 用户基本信息平铺版
-* */
-public class UserDetailInfo {
+ * 用户基本信息平铺版
+ * */
+public class UserDetailInfo implements java.io.Serializable {
+
+    /*
+     * 序列化版本号
+     */
+    private static final long serialVersionUID = 1L;
+
+
+
+    //序列化需要特殊处理方法的情况
+    //Classes that require special handling during the serialization and
+    //deserialization process must implement special methods with these exact
+    //signatures:
+    private void writeObject(java.io.ObjectOutputStream out) {
+        //throws IOException;
+        //out.defaultWriteObject();
+    }
+
+    private void readObject(java.io.ObjectInputStream in) {
+        //throws IOException,;
+    }
+
+    private void readObjectNoData() {
+        //throws ObjectStreamException;
+    }
+
+
 
 
     /**
@@ -78,7 +104,6 @@ public class UserDetailInfo {
     public void setRegistertime(Date registertime) {
         this.registertime = registertime;
     }
-
 
 
     /**
