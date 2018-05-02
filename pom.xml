@@ -156,6 +156,19 @@
 		</dependency>
 		<!--mapStruct依赖-->
 
+
+        <!--Oracle -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.oracle</groupId>-->
+            <!--<artifactId>ojdbc6</artifactId>-->
+            <!--<version>11.2.0.2.0</version>-->
+        <!--</dependency>-->
+        <!--Oracle -->
+
 	</dependencies>
 
 	<build>
