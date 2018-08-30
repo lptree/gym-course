@@ -1,5 +1,6 @@
 package com.letgym.gymcourse.configurer;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
