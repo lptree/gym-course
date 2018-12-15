@@ -1,5 +1,6 @@
 package com.letgym.gymcourse.configurer;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -38,6 +39,8 @@ public class MybatisConfigurer {
         properties.setProperty("pageSizeZero", "true");//分页尺寸为0时查询所有纪录不再执行分页
         properties.setProperty("reasonable", "true");//页码<=0 查询第一页，页码>=总页数查询最后一页
         properties.setProperty("supportMethodsArguments", "true");//支持通过 Mapper 接口参数来传递分页参数
+        properties.setProperty("rowBoundsWithCount", "true");//<!-- 设置为true时，使用RowBounds分页会进行count查询,也就是是否查询数据总条数 -->
+        //properties.setProperty("dialect", "Oracle");//Oracle
         pageHelper.setProperties(properties);
 
         //添加插件
