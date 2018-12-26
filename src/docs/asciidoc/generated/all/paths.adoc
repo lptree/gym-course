@@ -1,0 +1,3730 @@
+
+[[_paths]]
+== 资源
+
+[[_course-descriptions-controller_resource]]
+=== Course-descriptions-controller
+Course Descriptions Controller
+
+
+[[_addusingpost]]
+==== 增加课程
+....
+POST /course/descriptions/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**courseDescriptions** +
+__必填__|课程信息实体|<<_coursedescriptions,CourseDescriptions>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/descriptions/add
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "coursedesc" : "string",
+  "courseid" : 0,
+  "createtime" : "string",
+  "id" : 0,
+  "isdelete" : true,
+  "lastupdatetime" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost]]
+==== 删除课程
+....
+POST /course/descriptions/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|课程ID|ref
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/descriptions/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : "ref"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost]]
+==== 课程详情
+....
+POST /course/descriptions/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|课程ID|ref
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/descriptions/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : "ref"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_getcoursedescriptionslistbycourseidusingpost]]
+==== getCourseDescriptionsListByCourseId
+....
+POST /course/descriptions/getCourseDescriptionsListByCourseId
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**courserId** +
+__必填__|courserId|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/descriptions/getCourseDescriptionsListByCourseId
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "courserId" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost]]
+==== 课程列表
+....
+POST /course/descriptions/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**page** +
+__必填__|页数|<<_integer,Integer>>
+|**Body**|**size** +
+__必填__|页尺寸|<<_integer,Integer>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/descriptions/list
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost]]
+==== 更新课程
+....
+POST /course/descriptions/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**courseDescriptions** +
+__必填__|课程信息实体|ref
+|**Query**|**coursedesc** +
+__可选__||string
+|**Query**|**courseid** +
+__可选__||integer (int32)
+|**Query**|**createtime** +
+__可选__||string (date-time)
+|**Query**|**id** +
+__可选__||integer (int64)
+|**Query**|**isdelete** +
+__可选__||boolean
+|**Query**|**lastupdatetime** +
+__可选__||string (date-time)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/descriptions/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "courseDescriptions" : "ref",
+  "coursedesc" : "string",
+  "courseid" : 0,
+  "createtime" : "string",
+  "id" : 0,
+  "isdelete" : true,
+  "lastupdatetime" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_course-schedule-members-controller_resource]]
+=== Course-schedule-members-controller
+Course Schedule Members Controller
+
+
+[[_addusingpost_1]]
+==== add
+....
+POST /course/schedule/members/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Body**|**courseScheduleMembers** +
+__必填__|courseScheduleMembers|<<_courseschedulemembers,CourseScheduleMembers>>
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/members/add
+----
+
+
+====== 请求 body
+[source,json]
+----
+{
+  "createtime" : "string",
+  "id" : 0,
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "memberuid" : 0,
+  "scheduleid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_1]]
+==== delete
+....
+POST /course/schedule/members/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/members/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_1]]
+==== detail
+....
+POST /course/schedule/members/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/members/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_1]]
+==== list
+....
+POST /course/schedule/members/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/members/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_1]]
+==== update
+....
+POST /course/schedule/members/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**id** +
+__可选__|integer (int64)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**memberuid** +
+__可选__|integer (int64)
+|**Query**|**scheduleid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/members/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "id" : 0,
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "memberuid" : 0,
+  "scheduleid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_course-schedule-tearchers-controller_resource]]
+=== Course-schedule-tearchers-controller
+Course Schedule Tearchers Controller
+
+
+[[_addusingpost_2]]
+==== add
+....
+POST /course/schedule/tearchers/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**id** +
+__可选__|integer (int64)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**scheduleid** +
+__可选__|integer (int64)
+|**Query**|**tearcheruid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/tearchers/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "id" : 0,
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "scheduleid" : 0,
+  "tearcheruid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_2]]
+==== delete
+....
+POST /course/schedule/tearchers/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/tearchers/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_2]]
+==== detail
+....
+POST /course/schedule/tearchers/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/tearchers/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_2]]
+==== list
+....
+POST /course/schedule/tearchers/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/tearchers/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_2]]
+==== update
+....
+POST /course/schedule/tearchers/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**id** +
+__可选__|integer (int64)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**scheduleid** +
+__可选__|integer (int64)
+|**Query**|**tearcheruid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedule/tearchers/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "id" : 0,
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "scheduleid" : 0,
+  "tearcheruid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_course-schedules-controller_resource]]
+=== Course-schedules-controller
+Course Schedules Controller
+
+
+[[_addusingpost_3]]
+==== add
+....
+POST /course/schedules/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**availnum** +
+__可选__|integer (int32)
+|**Query**|**courseid** +
+__可选__|integer (int32)
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**endtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**name** +
+__可选__|string
+|**Query**|**personnum** +
+__可选__|integer (int32)
+|**Query**|**scheduledesc** +
+__可选__|string
+|**Query**|**scheduleid** +
+__可选__|integer (int64)
+|**Query**|**starttime** +
+__可选__|string (date-time)
+|**Query**|**tearcheruid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedules/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "availnum" : 0,
+  "courseid" : 0,
+  "createtime" : "string",
+  "endtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "name" : "string",
+  "personnum" : 0,
+  "scheduledesc" : "string",
+  "scheduleid" : 0,
+  "starttime" : "string",
+  "tearcheruid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_3]]
+==== delete
+....
+POST /course/schedules/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedules/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_3]]
+==== detail
+....
+POST /course/schedules/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedules/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_3]]
+==== list
+....
+POST /course/schedules/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedules/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_3]]
+==== update
+....
+POST /course/schedules/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**availnum** +
+__可选__|integer (int32)
+|**Query**|**courseid** +
+__可选__|integer (int32)
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**endtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**name** +
+__可选__|string
+|**Query**|**personnum** +
+__可选__|integer (int32)
+|**Query**|**scheduledesc** +
+__可选__|string
+|**Query**|**scheduleid** +
+__可选__|integer (int64)
+|**Query**|**starttime** +
+__可选__|string (date-time)
+|**Query**|**tearcheruid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/course/schedules/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "availnum" : 0,
+  "courseid" : 0,
+  "createtime" : "string",
+  "endtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "name" : "string",
+  "personnum" : 0,
+  "scheduledesc" : "string",
+  "scheduleid" : 0,
+  "starttime" : "string",
+  "tearcheruid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_courses-controller_resource]]
+=== Courses-controller
+Courses Controller
+
+
+[[_addusingpost_4]]
+==== add
+....
+POST /courses/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**courseid** +
+__可选__|integer (int32)
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**endtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**name** +
+__可选__|string
+|**Query**|**recommendscore** +
+__可选__|integer (int32)
+|**Query**|**starttime** +
+__可选__|string (date-time)
+|**Query**|**subname** +
+__可选__|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/courses/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "courseid" : 0,
+  "createtime" : "string",
+  "endtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "name" : "string",
+  "recommendscore" : 0,
+  "starttime" : "string",
+  "subname" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_4]]
+==== delete
+....
+POST /courses/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/courses/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_4]]
+==== detail
+....
+POST /courses/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/courses/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_4]]
+==== list
+....
+POST /courses/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/courses/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_4]]
+==== update
+....
+POST /courses/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**courseid** +
+__可选__|integer (int32)
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**endtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**name** +
+__可选__|string
+|**Query**|**recommendscore** +
+__可选__|integer (int32)
+|**Query**|**starttime** +
+__可选__|string (date-time)
+|**Query**|**subname** +
+__可选__|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/courses/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "courseid" : 0,
+  "createtime" : "string",
+  "endtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "name" : "string",
+  "recommendscore" : 0,
+  "starttime" : "string",
+  "subname" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_tearcher-display-controller_resource]]
+=== Tearcher-display-controller
+Tearcher Display Controller
+
+
+[[_addusingpost_5]]
+==== add
+....
+POST /tearcher/display/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**type** +
+__可选__|boolean
+|**Query**|**uid** +
+__可选__|integer (int64)
+|**Query**|**url** +
+__可选__|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/display/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "type" : true,
+  "uid" : 0,
+  "url" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_5]]
+==== delete
+....
+POST /tearcher/display/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/display/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_5]]
+==== detail
+....
+POST /tearcher/display/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/display/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_5]]
+==== list
+....
+POST /tearcher/display/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/display/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_5]]
+==== update
+....
+POST /tearcher/display/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**type** +
+__可选__|boolean
+|**Query**|**uid** +
+__可选__|integer (int64)
+|**Query**|**url** +
+__可选__|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/display/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "type" : true,
+  "uid" : 0,
+  "url" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_tearcher-info-controller_resource]]
+=== Tearcher-info-controller
+Tearcher Info Controller
+
+
+[[_addusingpost_6]]
+==== add
+....
+POST /tearcher/info/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**tearcherdesc** +
+__可选__|string
+|**Query**|**tearchergrade** +
+__可选__|string
+|**Query**|**uid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/info/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "tearcherdesc" : "string",
+  "tearchergrade" : "string",
+  "uid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_6]]
+==== delete
+....
+POST /tearcher/info/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/info/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_6]]
+==== detail
+....
+POST /tearcher/info/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/info/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_6]]
+==== list
+....
+POST /tearcher/info/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/info/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_6]]
+==== update
+....
+POST /tearcher/info/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**tearcherdesc** +
+__可选__|string
+|**Query**|**tearchergrade** +
+__可选__|string
+|**Query**|**uid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/tearcher/info/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "createtime" : "string",
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "tearcherdesc" : "string",
+  "tearchergrade" : "string",
+  "uid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_user-controller_resource]]
+=== User-controller
+User Controller
+
+
+[[_addusingpost_7]]
+==== add
+....
+POST /user/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**mobile** +
+__可选__|string
+|**Query**|**password** +
+__可选__|string
+|**Query**|**registertime** +
+__可选__|string (date-time)
+|**Query**|**salt** +
+__可选__|string
+|**Query**|**type** +
+__可选__|boolean
+|**Query**|**uid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "mobile" : "string",
+  "password" : "string",
+  "registertime" : "string",
+  "salt" : "string",
+  "type" : true,
+  "uid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_7]]
+==== delete
+....
+POST /user/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_7]]
+==== detail
+....
+POST /user/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_7]]
+==== list
+....
+POST /user/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_7]]
+==== update
+....
+POST /user/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**mobile** +
+__可选__|string
+|**Query**|**password** +
+__可选__|string
+|**Query**|**registertime** +
+__可选__|string (date-time)
+|**Query**|**salt** +
+__可选__|string
+|**Query**|**type** +
+__可选__|boolean
+|**Query**|**uid** +
+__可选__|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "isdelete" : true,
+  "lastupdatetime" : "string",
+  "mobile" : "string",
+  "password" : "string",
+  "registertime" : "string",
+  "salt" : "string",
+  "type" : true,
+  "uid" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_userdetailusingpost]]
+==== userDetail
+....
+POST /user/userDetail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/userDetail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_user-info-controller_resource]]
+=== User-info-controller
+User Info Controller
+
+
+[[_addusingpost_8]]
+==== add
+....
+POST /user/info/add
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**birthdate** +
+__可选__|string (date-time)
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**email** +
+__可选__|string
+|**Query**|**gender** +
+__可选__|boolean
+|**Query**|**headimageurl** +
+__可选__|string
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastlogintime** +
+__可选__|string (date-time)
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**memberendtime** +
+__可选__|string (date-time)
+|**Query**|**memberstarttime** +
+__可选__|string (date-time)
+|**Query**|**qqcode** +
+__可选__|string
+|**Query**|**source** +
+__可选__|string
+|**Query**|**uid** +
+__可选__|integer (int64)
+|**Query**|**username** +
+__可选__|string
+|**Query**|**wechatcode** +
+__可选__|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/info/add
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "birthdate" : "string",
+  "createtime" : "string",
+  "email" : "string",
+  "gender" : true,
+  "headimageurl" : "string",
+  "isdelete" : true,
+  "lastlogintime" : "string",
+  "lastupdatetime" : "string",
+  "memberendtime" : "string",
+  "memberstarttime" : "string",
+  "qqcode" : "string",
+  "source" : "string",
+  "uid" : 0,
+  "username" : "string",
+  "wechatcode" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_deleteusingpost_8]]
+==== delete
+....
+POST /user/info/delete
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int32)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/info/delete
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_detailusingpost_8]]
+==== detail
+....
+POST /user/info/detail
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a"]
+|===
+|类型|名称|说明|类型
+|**Query**|**id** +
+__必填__|id|integer (int64)
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/info/detail
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "id" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_listusingpost_8]]
+==== list
+....
+POST /user/info/list
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^9a,.^4a,.^2a"]
+|===
+|类型|名称|说明|类型|默认值
+|**Query**|**page** +
+__可选__|page|integer (int32)|`0`
+|**Query**|**size** +
+__可选__|size|integer (int32)|`0`
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/info/list
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "page" : 0,
+  "size" : 0
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+[[_updateusingpost_8]]
+==== update
+....
+POST /user/info/update
+....
+
+
+===== 参数
+
+[options="header", cols=".^2a,.^3a,.^4a"]
+|===
+|类型|名称|类型
+|**Query**|**birthdate** +
+__可选__|string (date-time)
+|**Query**|**createtime** +
+__可选__|string (date-time)
+|**Query**|**email** +
+__可选__|string
+|**Query**|**gender** +
+__可选__|boolean
+|**Query**|**headimageurl** +
+__可选__|string
+|**Query**|**isdelete** +
+__可选__|boolean
+|**Query**|**lastlogintime** +
+__可选__|string (date-time)
+|**Query**|**lastupdatetime** +
+__可选__|string (date-time)
+|**Query**|**memberendtime** +
+__可选__|string (date-time)
+|**Query**|**memberstarttime** +
+__可选__|string (date-time)
+|**Query**|**qqcode** +
+__可选__|string
+|**Query**|**source** +
+__可选__|string
+|**Query**|**uid** +
+__可选__|integer (int64)
+|**Query**|**username** +
+__可选__|string
+|**Query**|**wechatcode** +
+__可选__|string
+|===
+
+
+===== 响应
+
+[options="header", cols=".^2a,.^14a,.^4a"]
+|===
+|HTTP代码|说明|类型
+|**200**|OK|<<_result,Result>>
+|**201**|Created|无内容
+|**401**|Unauthorized|无内容
+|**403**|Forbidden|无内容
+|**404**|Not Found|无内容
+|===
+
+
+===== 消耗
+
+* `application/json`
+
+
+===== 生成
+
+* `\*/*`
+
+
+===== HTTP请求示例
+
+====== 请求 path
+----
+/user/info/update
+----
+
+
+====== 请求 query
+[source,json]
+----
+{
+  "birthdate" : "string",
+  "createtime" : "string",
+  "email" : "string",
+  "gender" : true,
+  "headimageurl" : "string",
+  "isdelete" : true,
+  "lastlogintime" : "string",
+  "lastupdatetime" : "string",
+  "memberendtime" : "string",
+  "memberstarttime" : "string",
+  "qqcode" : "string",
+  "source" : "string",
+  "uid" : 0,
+  "username" : "string",
+  "wechatcode" : "string"
+}
+----
+
+
+===== HTTP响应示例
+
+====== 响应 200
+[source,json]
+----
+{
+  "code" : 0,
+  "data" : "object",
+  "message" : "string"
+}
+----
+
+
+

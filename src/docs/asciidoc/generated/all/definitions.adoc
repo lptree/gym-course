@@ -1,0 +1,64 @@
+
+[[_definitions]]
+== 定义
+
+[[_coursedescriptions]]
+=== CourseDescriptions
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**coursedesc** +
+__可选__|**样例** : `"string"`|string
+|**courseid** +
+__可选__|**样例** : `0`|integer (int32)
+|**createtime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**id** +
+__可选__|**样例** : `0`|integer (int64)
+|**isdelete** +
+__可选__|**样例** : `true`|boolean
+|**lastupdatetime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|===
+
+
+[[_courseschedulemembers]]
+=== CourseScheduleMembers
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**createtime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**id** +
+__可选__|**样例** : `0`|integer (int64)
+|**isdelete** +
+__可选__|**样例** : `true`|boolean
+|**lastupdatetime** +
+__可选__|**样例** : `"string"`|string (date-time)
+|**memberuid** +
+__可选__|**样例** : `0`|integer (int64)
+|**scheduleid** +
+__可选__|**样例** : `0`|integer (int64)
+|===
+
+
+[[_result]]
+=== Result
+返回响应数据
+
+
+[options="header", cols=".^3a,.^11a,.^4a"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|**样例** : `0`|integer (int32)
+|**data** +
+__可选__|**样例** : `"object"`|object
+|**message** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+

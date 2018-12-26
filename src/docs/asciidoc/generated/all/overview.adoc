@@ -1,0 +1,38 @@
+= Spring Boot Gym Course使用 Swagger2 构建RESTful API
+
+
+[[_overview]]
+== 概览
+API 描述
+
+
+=== 版本信息
+[%hardbreaks]
+__版本__ : 1.0
+
+
+=== 联系方式
+[%hardbreaks]
+__名字__ : lptree
+
+
+=== URI scheme
+[%hardbreaks]
+__域名__ : localhost:8082
+__基础路径__ : /
+
+
+=== 标签
+
+* course-descriptions-controller : Course Descriptions Controller
+* course-schedule-members-controller : Course Schedule Members Controller
+* course-schedule-tearchers-controller : Course Schedule Tearchers Controller
+* course-schedules-controller : Course Schedules Controller
+* courses-controller : Courses Controller
+* tearcher-display-controller : Tearcher Display Controller
+* tearcher-info-controller : Tearcher Info Controller
+* user-controller : User Controller
+* user-info-controller : User Info Controller
+
+
+
